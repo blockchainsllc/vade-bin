@@ -1,9 +1,6 @@
 stages:          # List of stages for jobs, and their order of execution
   - build
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
 build-nightly:   # Nightly builds
   image: docker.slock.it/build-images/cmake:rust
   rules:
@@ -11,7 +8,7 @@ build-nightly:   # Nightly builds
   stage: build
   script:
     - ./build.sh
-    - mv libvade_evan.a libvade_evan.a # just to check if artifact exists
+    - test -f libvade_evan.a # just to check if artifact exists
   artifacts:
     paths:
       - libvade_evan.a
@@ -30,7 +27,7 @@ build:
   allow_failure: false
   script:
     - ./build.sh
-    - mv libvade_evan.a libvade_evan.a # just to check if artifact exists
+    - test -f libvade_evan.a # just to check if artifact exists
   artifacts:
     paths:
       - libvade_evan.a
