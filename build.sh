@@ -3,6 +3,10 @@
 # create directory for storing the built static library
 mkdir lib
 
+# in case it was not cloned with submodue flag
+git submodule init
+git submodule update
+
 # enter the vade-evan repository
 cd vade-evan
 
