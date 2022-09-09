@@ -1,0 +1,33 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+
+build-nightly:   # Nightly builds
+  image: rust
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"       
+  stage: build
+  script:
+    - ./build.sh
+  
+  artifacts:
+    paths:
+      - libvade_evan.a
+    expire_in: 1 day
+
+# manual builds for fast testing
+# NOTE: It is manual and the artifacts expire in 15 minutes because these builds are not
+# expected to be stable. They are more for tweeking and playing around. After which a 
+# scheduled nightly will be automatically created. 
+build:   
+  image: rust
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+    - when: manual      
+  stage: build
+  script:
+    - ./build.sh
+  
+  artifacts:
+    paths:
+      - libvade_evan.a
+    expire_in: 15 minutes
