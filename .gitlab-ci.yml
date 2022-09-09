@@ -5,7 +5,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 build-nightly:   # Nightly builds
-  image: rust
+  image: docker.slock.it/build-images/cmake:rust
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"       
   stage: build
@@ -22,7 +22,7 @@ build-nightly:   # Nightly builds
 # expected to be stable. They are more for tweeking and playing around. After which a 
 # scheduled nightly will be automatically created. 
 build:   
-  image: rust
+  image: docker.slock.it/build-images/cmake:rust
   rules:
     - if: $CI_PIPELINE_SOURCE != "schedule"      
   stage: build
