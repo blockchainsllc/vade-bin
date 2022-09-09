@@ -15,6 +15,7 @@ build-nightly:   # Nightly builds
   artifacts:
     paths:
       - libvade_evan.a
+    ignore_failure: false
     expire_in: 1 day
 
 # manual builds for fast testing
@@ -33,4 +34,5 @@ build:
   artifacts:
     paths:
       - libvade_evan.a
+    ignore_failure: false
     expire_in: 15 minutes
