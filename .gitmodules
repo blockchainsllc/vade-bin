@@ -1,0 +1,4 @@
+[submodule "vade-evan"]
+	path = vade-evan
+	url = https://github.com/evannetwork/vade-evan.git
+  branch = sdk
