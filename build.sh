@@ -1,9 +1,13 @@
 #!/bin/sh
+
+# install required OS dependencies
+sudo apt install clang cmake
+
 # create directory for storing the built static library
 mkdir lib
 
 # enter the vade-evan repository
-cd vade-evan && ls -la
+cd vade-evan
 
 # build vade-evan
 cargo build --release --no-default-features --features=sdk --target-dir ../lib

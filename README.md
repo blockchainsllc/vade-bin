@@ -9,3 +9,6 @@
 7. If you are wanting to just use the static libraries and not tweak around with this repository, then use the artifacts from the `build-nightly` job
 8. Static links to artifacts for the LATEST SUCCESSFUL `build` and `build-nightly` jobs are pasted below.
 
+`build` artifacts: (https://git.slock.it/in3/vade-libraries/-/jobs/artifacts/master/raw/libvade_evan.a?job=build)[https://git.slock.it/in3/vade-libraries/-/jobs/artifacts/master/raw/libvade_evan.a?job=build]
+
+`build-nightly` artifacts: (https://git.slock.it/in3/vade-libraries/-/jobs/artifacts/master/raw/libvade_evan.a?job=build-nightly)[https://git.slock.it/in3/vade-libraries/-/jobs/artifacts/master/raw/libvade_evan.a?job=build-nightly]
