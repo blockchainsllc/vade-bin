@@ -1,6 +1,9 @@
 stages:          # List of stages for jobs, and their order of execution
   - build
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 build-nightly:   # Nightly builds
   image: rust
   rules:
