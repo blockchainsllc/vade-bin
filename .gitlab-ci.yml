@@ -21,9 +21,9 @@ build-nightly:   # Nightly builds
 build:   
   image: rust
   rules:
-    - if: $CI_PIPELINE_SOURCE != "schedule"
-    - when: manual      
+    - if: $CI_PIPELINE_SOURCE != "schedule"      
   stage: build
+  when: manual
   script:
     - ./build.sh
   
