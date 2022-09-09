@@ -30,9 +30,8 @@ build:
   when: manual
   script:
     - ./build.sh
-  
+    - mv libvade_evan.a libvade_evan.a # just to check if artifact exists
   artifacts:
     paths:
-      - path: libvade_evan.a
-        ignore_failure: false
+      - libvade_evan.a
     expire_in: 15 minutes
