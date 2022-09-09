@@ -1,3 +1,4 @@
+#!/bin/sh
 # create directory for storing the built static library
 mkdir lib
 
