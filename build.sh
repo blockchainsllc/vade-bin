@@ -4,7 +4,7 @@
 mkdir lib
 
 # enter the vade-evan repository
-cd vade-evans
+cd vade-evan
 
 # build vade-evan
 cargo build --release --no-default-features --features=sdk --target-dir ../lib
