@@ -4,7 +4,7 @@ stages:          # List of stages for jobs, and their order of execution
 build-release:   # Tagged builds
   image: docker.slock.it/build-images/cmake:rust
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_TAG'      
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_TAG != null'      
   stage: build
   script:
     - ./build.sh
