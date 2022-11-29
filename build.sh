@@ -25,10 +25,10 @@ elif [ $1 = "x86_64-apple-darwin" ] && [[ $host == "x86_64-apple-darwin"* ]]
 then
   # build vade-evan for target using cross
   cargo build --release --no-default-features --features=sdk --target-dir ../build --target $1
-elif [ $1 = "armv7s-apple-ios" ] || [ $1 = "armv7-apple-ios" ] || [ $1 = "i686-apple-ios" ] || [ $1 = "x86_64-apple-ios" ]
+elif [ $1 = "armv7s-apple-ios" ] || [ $1 = "armv7-apple-ios" ] || [ $1 = "i686-apple-ios" ] 
 then
   echo "Target build not supported"
-elif [ $1 = "aarch64-apple-ios" ] || [ $1 = "aarch64-apple-ios-sim" ]
+elif [ $1 = "aarch64-apple-ios" ] || [ $1 = "aarch64-apple-ios-sim" ] || [ $1 = "x86_64-apple-ios" ]
 then
   # replace cargo.toml with a new one omitting compilation of didcomm
   mv Cargo.toml Cargo.toml.copy
