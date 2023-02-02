@@ -2,10 +2,6 @@
 # USAGE: ./build.sh <TARGET ARCHITECTURE> 
 # List of available target architectures https://doc.rust-lang.org/nightly/rustc/platform-support.html
 
-# in case it was not cloned with submodue flag
-git submodule init
-git submodule update
-
 # create a build directory
 mkdir build
 
