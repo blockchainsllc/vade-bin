@@ -31,4 +31,4 @@ RUN rustup target add asmjs-unknown-emscripten --toolchain nightly
 RUN rustup target add wasm32-unknown-emscripten --toolchain nightly
 RUN cargo install --git https://github.com/frewsxcv/wasm-pack.git --branch patch-2
 
-CMD wasm-pack build --release --target nodejs -- --no-default-features --features vc-zkp-bbs,did-read,did-write,did-sidetree,wasm
+CMD wasm-pack build --release --target nodejs -- --no-default-features --features vc-zkp-bbs,did-sidetree,wasm
