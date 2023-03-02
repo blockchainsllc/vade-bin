@@ -20,34 +20,34 @@ then
 elif [ $1 = "x86_64-apple-darwin" ] && [[ $host == "x86_64-apple-darwin"* ]]
 then
   # build vade-evan for target using cross
-  cargo build --release --no-default-features --features=sdk --target-dir ../build --target $1
+  cargo build --release --no-default-features --features=bundle-sdk,target-c-lib --target-dir ../build --target $1
 elif [ $1 = "armv7s-apple-ios" ] || [ $1 = "armv7-apple-ios" ] || [ $1 = "i686-apple-ios" ] 
 then
   echo "Target build not supported"
-elif [ $1 = "aarch64-apple-ios" ] || [ $1 = "aarch64-apple-ios-sim" ] || [ $1 = "x86_64-apple-ios" ] || [ $1 = "x86_64-pc-windows-gnu" ]
-then
-  # replace cargo.toml with a new one omitting compilation of didcomm
-  mv Cargo.toml Cargo.toml.copy
-  cp ../Cargo.toml.new Cargo.toml
+# elif [ $1 = "aarch64-apple-ios" ] || [ $1 = "aarch64-apple-ios-sim" ] || [ $1 = "x86_64-apple-ios" ] || [ $1 = "x86_64-pc-windows-gnu" ]
+# then
+#   # replace cargo.toml with a new one omitting compilation of didcomm
+#   mv Cargo.toml Cargo.toml.copy
+#   cp ../Cargo.toml.new Cargo.toml
 
-  # copy the cross configuration inside vade-evan
-  cp ../Cross.toml Cross.toml
+#   # copy the cross configuration inside vade-evan
+#   cp ../Cross.toml Cross.toml
 
-  # build vade-evan for target using cross
-  cross build --release --no-default-features --features=sdk --target-dir ../build --target $1
+#   # build vade-evan for target using cross
+#   cross build --release --no-default-features --features=sdk --target-dir ../build --target $1
 
-  # delete cross configuration
-  rm Cross.toml
+#   # delete cross configuration
+#   rm Cross.toml
 
-  # fall back to the original cargo.toml
-  rm Cargo.toml
-  mv Cargo.toml.copy Cargo.toml
+#   # fall back to the original cargo.toml
+#   rm Cargo.toml
+#   mv Cargo.toml.copy Cargo.toml
 else
   # copy the cross configuration inside vade-evan
   cp ../Cross.toml Cross.toml
 
   # build vade-evan for target using cross
-  cross build --release --no-default-features --features=sdk --target-dir ../build --target $1
+  cross build --release --no-default-features --features=bundle-sdk,target-c-lib --target-dir ../build --target $1
 
   # delete cross configuration
   rm Cross.toml
